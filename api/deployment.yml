@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: api
 spec:
   replicas: 3
   selector:
@@ -13,7 +13,7 @@ spec:
         app: api
     spec:
       containers:
-      - name: api-container
-        image: gcr.io/kubproject-302402/api:1.0
-        ports:
-        - containerPort: 8080
+        - name: api-container
+          image: gcr.io/peppy-aileron-292121/api:1.0
+          ports:
+            - containerPort: 8080

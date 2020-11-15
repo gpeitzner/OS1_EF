@@ -1,5 +1,53 @@
 <div class="container my-5">
-  <div class="row">
+  <div class="row my-5">
+    <div class="col">
+      <h3>Iniciar sesión</h3>
+      <div class="row">
+        <div class="col">
+          <p class="font-weight-light">Usuario</p>
+          <input type="text" class="w-100" [(ngModel)]="username" />
+        </div>
+        <div class="col">
+          <p class="font-weight-light">Contraseña</p>
+          <input type="password" class="w-100" [(ngModel)]="password" />
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-dark w-100 h-100"
+            (click)="loginEvent()"
+          >
+            Entrar
+          </button>
+        </div>
+      </div>
+      <div class="row" *ngIf="token">
+        <div class="alert alert-success my-4" role="alert">
+          eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWF0IjoxNjA1NDY5MTg0LCJleHAiOjE2MDU0NzA5ODR9.pzwY9_EqtjZc632-hkXxFWv6dMdaZTXsgwbwRGkusrs
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5" *ngIf="token">
+    <div class="col">
+      <h3>Crear registro</h3>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="w-100 h-100" [(ngModel)]="text" />
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-outline-dark w-100"
+            (click)="createRegister()"
+          >
+            Agregar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row my-5" *ngIf="token">
     <div class="col">
       <h3>Registros</h3>
       <div class="card my-3" *ngFor="let item of data">
