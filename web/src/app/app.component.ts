@@ -20,7 +20,7 @@ export class AppComponent {
 
   loginEvent(): void {
     this.httpClient
-      .post('http://localhost:8080/credentials', {
+      .post('http://35.239.22.19:8080/credentials', {
         username: this.username,
         password: this.password,
       })
@@ -43,7 +43,7 @@ export class AppComponent {
         Authorization: 'Bearer ' + this.token,
       }),
     };
-    this.httpClient.get('http://localhost:8080/', httpOptions).subscribe(
+    this.httpClient.get('http://35.239.22.19:8080/', httpOptions).subscribe(
       (data) => {
         this.data = data;
         console.log(data);
@@ -60,7 +60,7 @@ export class AppComponent {
       }),
     };
     this.httpClient
-      .post('http://localhost:8080/', { text: this.text }, httpOptions)
+      .post('http://35.239.22.19:8080/', { text: this.text }, httpOptions)
       .subscribe(
         () => {
           this.getData(), (this.text = '');
