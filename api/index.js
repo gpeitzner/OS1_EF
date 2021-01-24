@@ -1,8 +1,8 @@
 const AWS = require("aws-sdk");
 const DDB = new AWS.DynamoDB({
-  accessKeyId: "AKIA5M3XKPWM4P24F63P",
-  secretAccessKey: "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",
-  region: "us-east-2",
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY,
+  region: process.env.REGION,
 });
 
 function insert(params) {
@@ -37,8 +37,7 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const jwt = require("jsonwebtoken");
-const TOKEN_SECRET =
-  "2b930be6d7b235c753a7795a9dc9d2cab9c448c4ba719fffbe5f288a59ea646fc75d9922b811c5d1dce0810af99d3ed2f9bab8998335a78bc50db2081c04ac58";
+const TOKEN_SECRET = process.env.TOKEN_SECRET;
 
 function authenticateToken(req, res, next) {
   const authHeader = req.headers["authorization"];
