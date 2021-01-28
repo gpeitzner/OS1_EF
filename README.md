@@ -1,2 +1,2 @@
 # OS1_EF
-Angular and NodeJS (with DynamoDB) deployment with k8s.
+Angular and NodeJS (with DynamoDB) deployment with K8s.
